@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Platzi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="web/css/main.css">
+</head>
+<body>
+    <div id="app">
+        <button @click="openmodal">Show Modal</button>
+        <modal 
+        v-on:close-modal="closemodal"
+        v-bind:class="{open: statusopen, close: !statusopen}">
+            <template v-slot:text>
+                <p>
+                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. 
+                    Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500 
+                </p>
+            </template>
+        </modal>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script src="web/js/main.js"></script>
+</html>
